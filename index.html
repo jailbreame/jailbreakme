@@ -1,0 +1,72 @@
+<!-- Created by Sem Voigtlander -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, user-scalable=no">
+        <title>Jailbreak Me 5.0</title>
+        <link rel="stylesheet" type="text/css" href="style.css"/>
+        <script type="text/javascript" src="modular.js"></script>
+        <script type="text/javascript">
+            
+            /* Configuration and Initialization */
+            window.fuckoffwenetakidcounter = 0;
+            window.module_base = "modules";
+            
+            /* Module imports */
+            module('sha1');
+            module('sha');
+            module('md5');
+            module('sploit');
+            
+            /* Common functions */
+            
+            function vm_wenetakid_prot() {
+                window.fuckoffwenetakidcounter++;
+                if(window.fuckoffwenetakidcounter==3) {
+                    alert('I swear, leave me alone WEN ETA kid. Next try i will crash your safari to make you fuck off if you do not fuckoff rightnow.');
+                }
+                
+                if(window.fuckoffwenetakidcounter>3) {
+                    window.location.href="fuckoff.html";
+                }
+            }
+            
+
+            function clear_callback() {
+                document.getElementById('go').innerText=""; //clear the callback element
+            }
+
+
+            //Overwrite document.write to write to our callback element
+            document.write = function(x){
+                document.getElementById('go').innerHTML+=x;
+            };
+        
+            //Simple function to write formatted strings to the callback element
+            function puts(str) {
+                document.write(str.toString()+"<br>");
+            }
+        
+        </script>
+    </head>
+    <body>
+        <script type="text/javascript">
+            //This function is called when the users presses the start button
+            var go = function() {
+                clear_callback();
+                if(!sploit_main()) vm_wenetakid_prot(); 
+            };
+        </script>
+        <header>
+            Jailbreak Me 5.0<br>
+            <i style='font-size:13px !important;'>11.2-11.3.1</i>
+        </header>
+        <main>
+            <a href="#busy" id="go" onclick="go();" class="go">Go!</a>
+        </main>
+        <footer>
+            Created by Yangcheesen; H_PW2NTP; TinLin; Zlab Team & zOS Team.
+        </footer>
+    </body>
+</html>
